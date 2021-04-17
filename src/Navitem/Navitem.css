@@ -1,0 +1,35 @@
+.navmenu__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .navmenu__item:hover {
+    background-color: var(--primary-light-color);
+    color: var(--primary-color);
+    border-radius: 30px;
+    transition: color 80ms ease-out;
+  }
+  
+  .navmenu__item--active {
+    color: var(--primary-color);
+  }
+  
+  .navmenu__item > span {
+    font-size: 18px;
+    font-weight: 600;
+    margin-inline-end: 18px;
+  }
+  
+  @media (min-width: 1000px) {
+    .navmenu__item {
+      justify-content: inherit;   
+    }
+  
+    .navmenu__item > .MuiSvgIcon-root {
+      margin-inline-end: 16px;
+    }  
+  }
