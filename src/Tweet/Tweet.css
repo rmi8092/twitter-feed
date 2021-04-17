@@ -1,0 +1,75 @@
+.tweet {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  
+  .tweet__avatar {
+    padding: 10px;
+  }
+  
+  .tweet__body {
+    flex: 1;
+    padding: 10px;
+    width: calc(100% - 60px);
+  }
+  
+  .tweet__body > img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+  }
+  
+  .tweet__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .tweet__footer .MuiSvgIcon-root {
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  .tweet__footer .MuiSvgIcon-root:hover {
+    border-radius: 50%;
+  }
+  
+  .tweet__footer .MuiSvgIcon-root:first-child:hover,
+  .tweet__footer .MuiSvgIcon-root:last-child:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-light-color);
+  }
+  
+  .tweet__footer .MuiSvgIcon-root:nth-child(2):hover {
+    color: rgb(52, 169, 52);
+    background-color: rgba(77, 176, 77, 0.2);
+  }
+  
+  .tweet__footer .MuiSvgIcon-root:nth-child(3):hover {
+    color: rgb(255, 53, 53);
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  
+  .tweet__header-text > h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .tweet__badge.MuiSvgIcon-root {
+    font-size: 14px;
+    color: var(--primary-color);
+  }
+  
+  .tweet__header-special {
+    font-weight: 600;
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+  }
+  
+  .tweet__header-description {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
