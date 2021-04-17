@@ -1,0 +1,70 @@
+.tweetForm {
+    border-bottom: 12px solid var(--secondary-color);
+    padding: 10px;
+  }
+  
+  .tweetForm > form {
+    display: flex;
+  }
+  
+  .tweetForm__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-inline-start: 18px;
+  }
+  
+  .tweetForm__input > input {
+    border: none;
+    flex: 1;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 10px;
+  }
+  
+  .tweetForm__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .tweetForm__attached {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  .tweetForm__attached .MuiSvgIcon-root {
+    margin-inline-end: 6px;
+    color: var(--primary-color);
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .tweetForm__attached .MuiSvgIcon-root:hover {
+    background: var(--primary-light-color);
+    border-radius: 50%;
+  }
+  
+  /* .tweetForm__image {
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 30px;
+  } */
+  
+  .tweetForm__button.MuiButtonBase-root {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 800;
+    text-transform: inherit;
+    margin-top: 22px;
+    height: 40px;
+    margin-inline-start: auto;
+  }
+  
+  .tweetForm__button.MuiButtonBase-root:hover {
+    color: var(--primary-color);
+  }
