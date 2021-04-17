@@ -8,6 +8,16 @@ body {
   --text-color: #000;
 }
 
+body.dark-theme{
+  --background-color: #000;
+  --primary-color: #88b2ce;
+  --primary-light-color: #868e94;
+  --secondary-color: rgb(47, 51, 54);
+  --light-secondary-color: #505050;
+  --dark-secondary-color: rgb(205, 200, 200);
+  --text-color: #fff;
+}
+
 body {
   background-color: var(--background-color);
 }
