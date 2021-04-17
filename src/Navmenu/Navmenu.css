@@ -1,0 +1,120 @@
+.navmenu {
+    width: 100px;
+    border-right: 1px solid var(--secondary-color);
+    padding: 20px;
+    padding-bottom: 0;
+    min-height: 100%;
+    transition: all 1s ease-in-out;
+  }
+  
+  .navmenu__twitterIcon.MuiSvgIcon-root {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-inline-start: calc(50% - 12px);
+    margin-top: 55px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .navmenu__button {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navmenu__tweet.MuiButtonBase-root {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 800;
+    text-transform: inherit;
+    margin-top: 22px;
+    height: 48px;
+    min-width: 48px;
+    padding: 0;
+  }
+  
+  .navmenu__tweet.MuiButtonBase-root:hover {
+    color: var(--primary-color);
+  }
+  
+  .navmenu__header {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .navmenu__theme-switcher {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1s ease-in-out;
+  }
+  
+  .navmenu__theme-switcher .MuiSvgIcon-root {
+    font-size: 20px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .navmenu__theme-switcher .MuiSvgIcon-root:first-child {
+    color: #efc323;
+  }
+  
+  .navmenu__theme-switcher .MuiSvgIcon-root:last-child {
+    color: #6b8ad2;
+  }
+  
+  .MuiSwitch-switchBase.MuiButtonBase-root.Mui-checked {
+    color: var(--primary-color);
+  }
+  
+  .navmenu__item {
+    position: relative;
+  }
+  
+  .navmenu__item span {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: none;
+    transition: opacity 0.2s ease-in, top 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  @media (min-width: 1000px) {
+    .navmenu {
+      width: 20%;
+      min-width: 200px;
+    }
+  
+    .navmenu__header {
+      margin-bottom: 30px;
+    }
+  
+    .navmenu__twitterIcon.MuiSvgIcon-root {
+      margin-inline-start: 14px;
+      margin-top: 2px;
+      margin-bottom: 0;
+    }
+  
+    .navmenu__theme-switcher {
+      right: 0;
+      top: 4px;
+      transform: none;
+    }
+  
+    .navmenu__item span {
+      margin-inline-start: 50px;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .navmenu__tweet.MuiButtonBase-root {
+      width: 100px;
+      border-radius: 30px;
+    }
+  }
