@@ -46,12 +46,9 @@
     border-radius: 50%;
   }
   
-  /* .tweetForm__image {
-    border: none;
-    padding: 10px;
-    font-size: 12px;
-    border-radius: 30px;
-  } */
+  .tweetForm__image {
+    margin-top: 8px;
+  }
   
   .tweetForm__button.MuiButtonBase-root {
     background-color: var(--primary-color);

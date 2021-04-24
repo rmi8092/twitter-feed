@@ -1,3 +1,5 @@
+import {forwardRef} from 'react'
+
 import './Tweet.css';
 import {Avatar} from '@material-ui/core';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
@@ -6,9 +8,17 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishIcon from '@material-ui/icons/Publish';
 
-const Tweet = ({avatar, name, username, verified, text, image}) => {
+const Tweet = 
+  forwardRef(({
+    avatar,
+    name,
+    username,
+    verified,
+    text,
+    image
+  }, ref) => {
   return (
-    <div className="tweet">
+    <div className="tweet" ref={ref}>
       <div className="tweet__avatar">
         <Avatar src={avatar}></Avatar>
       </div>
@@ -37,6 +47,6 @@ const Tweet = ({avatar, name, username, verified, text, image}) => {
       </div>
     </div>
   )
-}
+})
 
 export default Tweet;
