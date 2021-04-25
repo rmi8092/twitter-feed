@@ -1,19 +1,33 @@
-import {useState} from  'react';
+import { useState } from  'react';
 
 import './TweetForm.css';
+import Modal from '../Modal/Modal'
+
 import {Button, Avatar} from '@material-ui/core';
 import { Gif, ImageOutlined, PollOutlined, SentimentSatisfiedOutlined, EventOutlined } from '@material-ui/icons';
+import ReactGiphySearchbox from "react-giphy-searchbox";
 import db from '../firebase'
 
 const TweetForm = () => {
   const [tweetText, setTweetText] = useState('')
   const [imageInputVisible, setImageInputVisible] = useState(false)
   const [tweetImage, setTweetImage] = useState('')
+  const [gifModalVisible, setGifModalVisible] = useState(false)
 
   const toggleImageInput = () => {
     setImageInputVisible(visible => !visible)
   }
+
+  const toggleModal = () => {
+    setGifModalVisible(visible => !visible)
+  }
   
+  const selectGif = (item) => {
+    toggleImageInput()
+    setTweetImage(item.images.original.url)
+    setGifModalVisible(false)
+  }
+
   const submitTweet = (event) => {
     event.preventDefault()
     db.collection('tweets').add({
@@ -52,10 +66,12 @@ const TweetForm = () => {
               <ImageOutlined
                 onClick={toggleImageInput}
               />
-              <Gif/>
-              <PollOutlined/>
-              <SentimentSatisfiedOutlined/>
-              <EventOutlined/>
+              <Gif
+                onClick={toggleModal}
+              />
+              <PollOutlined className="disabled"/>
+              <SentimentSatisfiedOutlined className="disabled"/>
+              <EventOutlined className="disabled"/>
             </div>
             <Button
               type="submit"
@@ -67,6 +83,18 @@ const TweetForm = () => {
           </div>
         </div>
       </form>
+      {gifModalVisible &&
+        <Modal toggleModal={toggleModal}>
+          <ReactGiphySearchbox
+            apiKey="TJ74BTQUQYnfvIz2u1eWfmWVEzWYrWTG"
+            onSelect={(item) => selectGif(item)}
+            masonryConfig={[
+              { columns: 2, imageWidth: 110, gutter: 5 },
+              { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 }
+            ]}
+          />
+        </Modal>
+      }
     </div>
   )
 }
