@@ -21,19 +21,22 @@ const Feed = () => {
       </div>
       <TweetForm/>
       <FlipMove>
-        {tweets.map(tweet => {
-          return (
-            <Tweet
-              key={tweet.text}
-              avatar={tweet.avatar}
-              name={tweet.name}
-              username={tweet.username}
-              verified={tweet.verified}
-              text={tweet.text}
-              image={tweet.image}
-            />
-          )
-        })}
+        {tweets
+          .sort((a, b) => b.timeStamp - a.timeStamp)
+          .map(tweet => {
+            return (
+              <Tweet
+                key={tweet.text}
+                avatar={tweet.avatar}
+                name={tweet.name}
+                username={tweet.username}
+                verified={tweet.verified}
+                text={tweet.text}
+                image={tweet.image}
+              />
+            )
+          })
+        }
       </FlipMove>
     </div>
   )

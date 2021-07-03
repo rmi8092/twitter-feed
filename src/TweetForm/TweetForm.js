@@ -36,7 +36,8 @@ const TweetForm = () => {
       username: '@Raf_MirIb',
       verified: true,
       text: tweetText,
-      image: tweetImage
+      image: tweetImage,
+      timeStamp: Date.now()
     })
     setTweetText('')
     setTweetImage('')
