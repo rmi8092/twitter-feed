@@ -33,6 +33,7 @@ const Feed = () => {
                 verified={tweet.verified}
                 text={tweet.text}
                 image={tweet.image}
+                timeStamp={tweet.timeStamp}
               />
             )
           })

@@ -7,6 +7,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishIcon from '@material-ui/icons/Publish';
+import useTimeAgo from './../hooks/useTimeAgo'
 
 const Tweet = 
   forwardRef(({
@@ -15,8 +16,11 @@ const Tweet =
     username,
     verified,
     text,
-    image
+    image,
+    timeStamp
   }, ref) => {
+  const {dateTime, timeAgo} = useTimeAgo(timeStamp)
+  
   return (
     <div className="tweet" ref={ref}>
       <div className="tweet__avatar">
@@ -30,6 +34,7 @@ const Tweet =
               <span className="tweet__header-special">
                 {verified && <VerifiedUserIcon className="tweet__badge"/>}
                 <span>{username}</span>
+                <time dateTime={dateTime}> · {timeAgo}</time>
               </span>
             </h3>
           </div>
